@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Quiz</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />  
+</head>
+
+
+<body> 
+  <header>
+      <div class="timer" id="init">
+          <div class="time-left-text">Time left</div>
+          <div class="timer-sec"id="timer">50</div>
+        </div>
+   
+      <div class="welcome-box">
+        <h1 class="page-title">Quiz Code on JavaScript</h1>
+                 <h2 class="Welcome">Welcome!</h2>
+        <p>Try to answer the following code-related questions within the time limit. 
+                keep in the mind that <spam>incorrect answers will penalize your score/time by 10 seconds!</spam></p>
+        <button class="btn" id="start">Start Quiz</button>
+      </div>
+    </header>
+
+    <section id="questions-container" class="hide">
+      <div id="question">Question</div>
+      <div id="answer-buttons" class="answer">
+       <button class="btn-a">Answer 1</button>
+       <button class="btn-a">Answer 2</button>
+       <button class="btn-a">Answer 3</button>
+       <button class="btn-a">Answer 4</button>
+      </div>
+    </section>
+
+    <div class="total">
+                <!-- Here I've inserted Question Count Number from JavaScript -->
+           
+    <!-- Result Box -->
+    <div class="result_box">
+      <div class="icon">
+          <i class="fas fa-crown"></i>
+      </div>
+      
+      <div class="complete-text"id=complete-text>You've completed the Quiz!</div>
+      <div class="score_text">
+          <!-- Here I've inserted Score Result from JavaScript -->
+      </div>
+      <div class="buttons">
+          <button class="restart">Replay Quiz</button>
+          <button class="quit">Quit Quiz</button>
+      </div>
+  </div>
+ 
+  
+
+
+  <script src="./assets/js/script.js"></script>    
+</body>
+</html>
+
