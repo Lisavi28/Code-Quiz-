@@ -19,5 +19,5 @@ https://lisavi28.github.io/Code-Quiz-/
 
 Made by [Yazmín Sánchez]
 
-https://github.com/Lisavi28/Code-Quiz-/blob/main/assets/images/quiz1.PNG
+![quiz1] (https://github.com/Lisavi28/Code-Quiz-/blob/main/assets/images/quiz1.PNG)
 
