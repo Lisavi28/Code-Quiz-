@@ -3,24 +3,75 @@
 var buttonEl = document.querySelector("#start");
 var sectionEl = document.querySelector ("#questions-container");
 var headerEl = document.querySelector(".welcome-box");
-var completetextEl=document.querySelector(".complete-text");
 var timerEl = document.querySelector("#init");
+var opt1El = document.querySelector("#btn1");
+var opt2El = document.querySelector("#btn2");
+var opt3El = document.querySelector("#btn3");
+var opt4El = document.querySelector("#btn4");
+var optionsEl = document.querySelector("#answer-buttons");
+var alertsEl = document.querySelector("#alerts");
+var inputEl = document.querySelector(".buttons");
+var i = 0;
+var corrects = 0;
+var timeLeft = 50;
 
 buttonEl.addEventListener("click", function() {
     buttonEl.classList.add("hide")
          sectionEl.classList.remove("hide")
               headerEl.classList.add("hide")
-                  completetextEl.classList.add("hide")
+                 
                       timerEl.classList.remove("hide")
-                        timer();
+                         timer();
+
+                      document.getElementById("question").innerHTML = questions[0].question;
+                      document.getElementById("btn1").innerHTML = questions[0].options[0];
+                      document.getElementById("btn2").innerHTML = questions[0].options[1];
+                      document.getElementById("btn3").innerHTML = questions[0].options[2];
+                      document.getElementById("btn4").innerHTML = questions[0].options[3];
+                      
+                        
 });
 
+optionsEl.addEventListener("click", function(event) {
+  var correctans = event.target;
+alertsEl.innerHTML="";
+     if (correctans.textContent == questions[i].answers) {
+        corrects = corrects +1 
+        document.getElementById("alerts").innerHTML = "Your answer is correct";
+      }
 
-var timerEl = document.getElementById('timer');
+      if (correctans.textContent !== questions[i].answers) {
+        document.getElementById("alerts").innerHTML = "Your answer is incorrect";
+        timeLeft=timeLeft-10;
+      }
+
+
+if (i < (questions.length-1) ) {
+               i = i+1;
+                    document.getElementById("question").innerHTML = questions[i].question;
+                    document.getElementById("btn1").innerHTML = questions[i].options[0];
+                    document.getElementById("btn2").innerHTML = questions[i].options[1];
+                    document.getElementById("btn3").innerHTML = questions[i].options[2];
+                    document.getElementById("btn4").innerHTML = questions[i].options[3];
+}
+
+
+else {
+  finish();
+}
+});
+ var finish = function() {
+   window.alert("you got  "+corrects +"correct answers");
+   sectionEl.classList.add("hide")
+   timerEl.classList.add("hide")
+   document.getElementById("alerts").innerHTML = "Your final score is " + (corrects *25)+" Add your name below for the database";
+   inputEl.classList.remove("hide")
+
+ }
 
 // Timer that counts down from 5
 function timer() {
-  var timeLeft = 50;
+  
 
   // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
   var timeInterval = setInterval(function () {
@@ -48,57 +99,52 @@ function timer() {
 
 
 // section questions
-document.getElementById("question").innerHTML = questions[0].question;
-document.getElementById("ansBtn1").innerHTML = questions[0].answers[0].answer1;
-document.getElementById("ansBtn2").innerHTML = questions[0].answers[1].answer2;
-document.getElementById("ansBtn3").innerHTML = questions[0].answers[2].answer3;
-document.getElementById("ansBtn4").innerHTML = questions[0].answers[3].answer4;
+
 
   var questions= [
 {
 
-number: 1, 
-question: "Inside the HTML document, where do you place your JavaScript code?",
-answer: "In the <footer> element",
+question: "1. Inside the HTML document, where do you place your JavaScript code?",
+answers: "Inside the script element",
 options: [
-"Inside the <script> element",
-"In the <footer> element",
-"Inside the <head> element",
-"Inside the <link> element",
+"Inside the script element",
+"In the footer element",
+"Inside the head element",
+"Inside the link element"
 ]
 },
 {
-number: 2, 
-question: "What operator is used to assign a value to a declared variable?",
-answer:"Equal sign (=)",
+ 
+question: "2. What operator is used to assign a value to a declared variable?",
+answers:"Equal sign (=)",
 options: [
-"Question marK (?) false",
-"Colon (:) false",
-"Equal sign (=) rigth",
-"Double-equal (==) false",
+"Question marK (?)",
+"Colon (:)",
+"Equal sign (=)",
+"Double-equal (==)"
 ]
 },
 {
-number:3, 
-question: "How do we declare a conditional statement in JavaScript?",
-answer: "if...else",
+
+question: "3. How do we declare a conditional statement in JavaScript?",
+answers: "if...else",
 options: [
 "while loop",
 "if...else",
 "for loop",
-"difference...between",
+"difference...between"
 ]
 }, 
 
 {
-number:4,
-question: "What are the two types of scope JavaScript uses?",
-answer: "Global and Local",
+
+question: "4. What are the two types of scope JavaScript uses?",
+answers: "Global and Local",
 options: [
 "Global and Local",
 "Surrounding and Inner",
 "Outside and Inside",
-"Abroad and Local false",
+"Abroad and Local false"
 ]
 },
   ];
