@@ -4,7 +4,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    
+
+  /* style body*/  
   } 
 body {
     background: white;
@@ -15,6 +16,8 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+/* style timer*/
 
 .timer { 
     color: #004085;
@@ -29,6 +32,8 @@ body {
     width: 160px;
     margin: 80px;
 }
+
+/* style header*/
 
 h1 {
     font-weight: bold;
@@ -49,10 +54,6 @@ h1 {
   p {
  
     font-size: 35px;
-}
-
-.spam {
-  color: #2e31e7;
 }
 
 .start-btn, .hide {
@@ -97,6 +98,8 @@ h1 {
   background-color: #2e31e7;
 
 }
+
+/* style section question containes */
 
 .questions-container {
   width: 800px;
